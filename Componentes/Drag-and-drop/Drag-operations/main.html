@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Práctica sobre la operacion de drag</title>
+    
+
+    <style>
+        main div{
+            width: 100px;
+            height: 100px;
+            border-style: solid;
+            
+        }
+        .container-drag{
+            display: flex;
+            counter-set: list 1;
+            
+            
+            .drag-section::after{
+                content:counter(list);
+                
+            }
+        }
+        img{
+            height: 25px;
+            width: 25px;
+        }
+    </style>
+
+    <script type="module" src="functions.js"></script>
+</head>
+<body>
+    <img src="Image/pdf-image.png" alt="" >
+    <main>
+        <section class="documentacion">
+            <h2>SECCIÓN DE ESTUDIO Y DOCUMENTACIÓN</h2>
+            <p>El primer paso para que un elemento del DOM utilice el evento de drag se le debe de dar la propiedad de <b>draggable</b> a true.</p>
+            <p>Within the dragstart event, you can specify the drag data, the feedback image, and the drag effects, all of which are described below. However, only the drag data is required. (The default image and drag effects are suitable in most situations.)</p>
+            <p>La propiedad "effectAllowed" te permite especificar lo que deseas realizar con el drag. Acepta los siguientes valores:</p>
+            <ol>
+                <li>Copy</li>
+                <li>Move</li>
+                <li>Link</li>
+            </ol>
+        </section>
+        <section class="practica">
+            <h2>SECCIÓN DE PRÁCTICA</h2>
+            <div class="no-drag-section">
+                <p>Esta seccion no es draggeable</p>
+            
+            </div>
+            <section class="container-drag">
+            
+                <div class="drag-section" >
+                    <p draggable="true">Esta seccion es draggeable</p>
+                
+                </div>
+                
+            </section>
+
+            <section>
+                <h3>SECCIÓN DE DIFERENCIA ENTRE LA PROPIEDAD EFFECTALLOWED</h3>
+                <input type="text" name="" id="">
+
+            </section>
+        </section>
+
+
+    </main>
+    <footer>
+        <h2>BIBLIOGRAFÍA</h2>
+        <ol>
+            <li><a href="https://developer.mozilla.org/en-US/docs/Web/API/HTML_Drag_and_Drop_API/Drag_operations" target="_blank" rel="noopener noreferrer">Documentacion sobre la operación de drag de MDN</a></li>
+        </ol>
+    </footer>
+</body>
+</html>

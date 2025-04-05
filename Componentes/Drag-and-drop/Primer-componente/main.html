@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Creación de un drag and drop</title>
+    <style>
+        main{
+            height: 100vh;
+            
+        }
+        #drop-section {
+  border: 5px solid blue;
+  width: 200px;
+  height: 100px;
+}
+    </style>
+    <script src="functions.js"></script>
+</head>
+<body>
+    <main>
+        <h1>Mi primer drag and drop</h1>
+        <h2>Pasos a seguir para definir una zona de drag and drop</h2>
+        <ol>
+            <li>Definir una zona de "drop"</li>
+            <li>Realizar las funciones necesarias para la gestión de los archivos/eventos que se sueltan (drop and dropover)</li>
+        </ol>
+
+        <div id="drop-section" ondrop="dropHandler(event);" ondragover="dragOverHandler(event);">
+            <p>Arrastra aqui tus archivos ...</p>
+        </div>
+
+        <section id="see-items">
+        
+            <button type="button" onclick="seeListItems()">Pulsa para ver los items</button>
+            <button type="button" onclick="removeDragData()">Pulsa para borrar los items</button>
+        </section>
+    </main>
+    
+    <footer>
+        <h2>Bibliografia </h2>
+        <ol>
+            <li><a href="https://developer.mozilla.org/es/docs/Web/API/HTML_Drag_and_Drop_API/File_drag_and_drop" target="_blank" rel="noopener noreferrer">Documentación de la API  de drag and drop</a></li>
+            <li><a href="https://github.com/mdn/dom-examples/tree/main/drag-and-drop" target="_blank" rel="noopener noreferrer">Repositorio de MDN sobre drag and drop</a></li>
+        </ol>
+    </footer>
+    
+</body>
+</html>

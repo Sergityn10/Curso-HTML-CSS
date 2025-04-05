@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pruebas del efecto drag por defecto</title>
+    <script type="module">
+        const draggableElement = document.querySelector('p[draggable="true');
+        
+        draggableElement.addEventListener("dragstart", (event) =>{
+            event.dataTransfer.setData("text/plain","Dato a arrastrar")
+            event.dataTransfer.effectAllowed = "copy"
+            event.target.classList.add("dragging");
+
+        }
+        )
+
+        draggableElement.addEventListener("dragend", (event)=>{
+            const dropEffect = event.dataTransfer.dropEffect 
+            event.target.classList.remove("dragging");
+            
+            if(dropEffect === "none"){
+                prompt("No ha sido posible el drag")
+            }
+            else if(dropEffect === "move"){
+                prompt("El elemento ha sido movido")
+                
+            }
+        })
+
+        const textInput = document.getElementsByTagName("input")
+
+        const dropElement = document.getElementById("drop-zone");
+
+        dropElement.addEventListener("dragenter", (event) => {
+        event.preventDefault();
+        });
+
+        dropElement.addEventListener("dragover", (event) => {
+        event.preventDefault();
+        });
+
+        dropElement.addEventListener("drop", (event)=> doDrop(event));
+
+        function doDrop(event) {
+            const lines = event.dataTransfer.getData("text/uri-list").split("\n");
+            lines
+                .filter((line) => !line.startsWith("#"))
+                .forEach((line) => {
+                const link = document.createElement("a");
+                link.href = line;
+                link.textContent = "Enlace con drag";
+                event.target.appendChild(link);
+                });
+            event.preventDefault();
+            event.dataTransfer.items.clear()
+        }
+
+        
+    </script>
+    <style>
+    
+        #drop-zone{
+            width: 500px;
+            height: 200px;
+            border: solid;
+        }
+        .dragging{
+            background-color: blueviolet;
+        }
+    </style>
+</head>
+<body>
+    <main>
+        <p>Para que un elemento que por defecto no es draggeable, como un parrafo, es necesario establecer la propiedad de draggable a "true" y establecer un elemento de "dragstart" y el dato que se quiere arrastrar, no hace falta que sea el valor del propio parrafo.</p>
+        <p draggable="true" >Este parrafo es draggeable</p>
+        <a href="http://google.es" target="_blank" rel="noopener noreferrer" >Enlace</a>
+
+        <p>INTENTA ARRASTRAR EL TRAZO ANTERIOR A LOS CAMPOS DE INPUT</p>
+
+        <input type="text" name="" id="" >
+
+        <div id="drop-zone" >
+            <h2>ESPECIFICANDO UNA ZONA DE DROP</h2>
+
+        </div>
+    </main>
+</body>
+</html>

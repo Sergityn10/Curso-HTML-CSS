@@ -1,0 +1,22 @@
+1. Drag and drop
+2. Sidebar
+3. Card container
+4. carrusel
+5. Topbar
+6. Autocompletado
+7. Modales o popover
+8. Inicio de sesión y registro
+9. Autorización con OAuth con Google o uno personalizado
+10. Calculadora
+11. Buscador
+12. Filtro de búsquedas
+13. Cartas con etiquetados
+14. Acordeon 
+15. Popover temporal, como cuando te registras y aparece por un periodo de tiempo determinado.
+16. Una tabla de contenido dinámica, que te vaya poniendo en que parte del contenido te encuentras.
+17. Contador de tiempo
+18. Cronometro de tiempo y temporizador
+19. Cambio de estilado con un input de texto o autocompletado
+20. Apartado de Bibliografía automatizada
+21. Lista que se puede mover con drag and drop
+22. Probar la nueva manera de personalizar las opciones del elemento "select".
